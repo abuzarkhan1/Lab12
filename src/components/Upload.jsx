@@ -5,7 +5,7 @@ const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
-  const [uploadStatus, setUploadStatus] = useState(null); // null, 'success', 'error'
+  const [uploadStatus, setUploadStatus] = useState(null); 
   const [progress, setProgress] = useState(0);
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
 
@@ -76,7 +76,7 @@ const FileUpload = () => {
           const data = await res.json();
           console.log('Upload successful:', data);
           setUploadStatus('success');
-          // Save the image URL from the response
+
           if (data.imageUrl) {
             setUploadedImageUrl(data.imageUrl);
           }
@@ -132,7 +132,7 @@ const FileUpload = () => {
         </div>
         
         <div className="bg-gray-800 rounded-xl shadow-xl overflow-hidden">
-          {/* Upload Area */}
+          
           <div 
             className={`relative p-8 ${isDragging ? 'bg-gray-700' : ''} border-2 border-dashed rounded-t-lg ${
               isDragging 
@@ -180,7 +180,7 @@ const FileUpload = () => {
             </div>
           </div>
           
-          {/* Progress Bar */}
+         
           {isUploading && (
             <div className="px-4 py-3 bg-gray-750">
               <div className="w-full bg-gray-700 rounded-full h-2">
@@ -193,7 +193,7 @@ const FileUpload = () => {
             </div>
           )}
           
-          {/* Actions */}
+         
           <div className="px-4 py-4 bg-gray-750 rounded-b-lg">
             <div className="flex justify-between items-center">
               {file && !isUploading && !uploadStatus && (
@@ -247,7 +247,7 @@ const FileUpload = () => {
           </div>
         </div>
         
-        {/* Upload Result Section */}
+      
         <div className="mt-8 bg-gray-800 rounded-xl shadow-xl p-4">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-white font-medium">Uploaded Image</h2>
